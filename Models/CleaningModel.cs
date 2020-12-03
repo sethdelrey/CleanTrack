@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CleanTrack.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -13,12 +14,21 @@ namespace CleanTrack.Models
 
         public DateTime EndTime { get; set; }
 
-        //public bool IsBigMop { get; set; }
+        public bool IsDoubleClean { get; set; }
 
-        public List<Task> Tasks { get; set; }
+        public IList<string> FinishedTasks { get; set; }
 
-        /*public List<string> DoublesTasks = new List<string> { "Take Out Trash", "Dush Mop", "Vacuum", "Mop" };
+        public List<CleaningTask> Tasks = new List<CleaningTask> { 
+            new CleaningTask() {Name = "Take Out Trash", IsInDoubleClean = true}, 
+            new CleaningTask() { Name = "Dust Mop", IsInDoubleClean = true }, 
+            new CleaningTask() { Name = "Vacuum", IsInDoubleClean = true },
+            new CleaningTask() { Name = "Mop", IsInDoubleClean = true },
+            new CleaningTask() { Name = "Clean Kitchens", IsInDoubleClean = false },
+            new CleaningTask() { Name = "Clean Bathrooms", IsInDoubleClean = false },
+            new CleaningTask() { Name = "Dust", IsInDoubleClean = false },
+            new CleaningTask() { Name = "Wash Dishes", IsInDoubleClean = false },
+            new CleaningTask() { Name = "Clean Windows", IsInDoubleClean = true }
+        };
 
-        public List<string> SinglesTasks = new List<string> { "Take Out Trash", "Dush Mop", "Vacuum", "Mop", "Clean Kitchens", "Clean Bathrooms", "Dust", "Wash Dishes", "Clean Windows", "" };*/
     }
 }

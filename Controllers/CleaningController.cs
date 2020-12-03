@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Threading.Tasks;
 using CleanTrack.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,26 +9,41 @@ namespace CleanTrack.Controllers
         public IActionResult Index()
         {
             var data = new CleaningModel();
+
             return View(data);
         }
 
-        public IActionResult StartCleaning()
+        public IActionResult StartCleaning(CleaningModel data)
         {
-            CleaningModel data = new CleaningModel
-            {
-                StartTime = DateTime.Now
-            };
+            data.StartTime = DateTime.Now;
+            
             // data.StartTime = DateTime.ParseExact(startTime, "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
-
 
             return View("Index", data);
         }
 
         public IActionResult EndCleaning(CleaningModel data)
         {
+            data.EndTime = DateTime.Now;
+            var finishedCleaningModel = new FinishedCleaningModel();
+            if (data != null)
+            {
+                var totalTime = data.EndTime.Subtract(data.StartTime);
 
+                finishedCleaningModel.TotalTime = totalTime.Hours + ":" + totalTime.Minutes + ":" + totalTime.Seconds;
+            }
 
-            return View("CleaningDone", data);
+            finishedCleaningModel.FinishedTasks = data.FinishedTasks;
+
+            // TODO: Put in database
+
+            return View("CleaningDone", finishedCleaningModel);
+        }
+
+        public IActionResult FinishTask(string taskName)
+        {
+
+            return View("Index");
         }
     }
 }

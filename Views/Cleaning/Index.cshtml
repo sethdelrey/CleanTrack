@@ -2,7 +2,7 @@
 
 <div class="card card-primary">
     <div class="card-header">
-        <h2>Cleaning Checklist</h2>
+        <h1>Cleaning Checklist</h1>
     </div>
     <div class="card-body">
         @if (Model.StartTime.Equals(DateTime.MinValue))
@@ -11,6 +11,12 @@
             {
                 <div class="form">
                     <div class="form-group">
+                        <label asp-for="IsDoubleClean">
+                            @Html.CheckBoxFor(m => m.IsDoubleClean)
+                            Are you cleaning with another person?
+                        </label>
+                        
+                        <br />
                         <input type="submit" value="Start Cleaning" />
                     </div>
                 </div>
@@ -26,12 +32,36 @@
                         <label asp-for="StartTime">Start Time: </label>
                         <input asp-for="StartTime" readonly />
                         <br />
-                        <input type="submit" value="Finish Cleaning" />
                     </div>
 
                     <div class="form-group">
+                        @foreach (var task in Model.Tasks)
+                        {
+                            @if (Model.IsDoubleClean == task.IsInDoubleClean || task.IsInDoubleClean)
+                            {
 
 
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" 
+                                           name="FinishedTasks"
+                                           value="@task.Name"
+                                           @if (task.IsDone)
+                                           {
+                                               <text> checked </text>
+                                           }
+                                           /> @task.Name
+
+                                </label>
+
+                            </div>
+                                }
+                            }
+
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Finish Cleaning" />
                     </div>
 
                 </div>

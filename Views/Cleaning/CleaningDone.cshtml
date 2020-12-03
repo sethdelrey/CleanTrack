@@ -1,3 +1,28 @@
-﻿@model CleaningModel
+﻿@model FinishedCleaningModel
 
-<h2>DONE!</h2>
+
+    <div class="card card-primary">
+        <div class="card-header">
+            <h1>You are done cleaning!</h1>
+        </div>
+
+        <div class="card-body">
+            <label asp-for="TotalTime">Total Time: </label>
+            <input asp-for="TotalTime" type="text" readonly/>
+
+            @if ((Model.FinishedTasks != null) && (Model.FinishedTasks.Any()))
+            {
+                <div>Finished Tasks:</div>
+                <ul>
+                    @foreach (var task in Model.FinishedTasks)
+                    {
+                        <li>@task</li>
+                    }
+                </ul>
+            }
+
+        </div>
+
+
+    </div>
+
