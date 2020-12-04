@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using static CleanTrack.Data.AdminContext;
 
 namespace CleanTrack.Entities
 {
     public class CleaningSession
     {
-        [Key]
         public int CleaningId { get; set; }
 
         [DataType(DataType.DateTime)]
@@ -17,6 +17,7 @@ namespace CleanTrack.Entities
 
         public bool IsBigMop { get; set; }
 
-        public List<CleaningTask> FinishedTasks { get; set; }
+
+        public List<SessionTask> SessionTasks { get; set; }
     }
 }

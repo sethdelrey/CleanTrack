@@ -1,6 +1,7 @@
 ﻿using CleanTrack.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace CleanTrack.Controllers
 {
@@ -8,14 +9,15 @@ namespace CleanTrack.Controllers
     {
         public IActionResult Index()
         {
-
             using (var context = new AdminContext())
             {
                 var CleaningSessions = context.Sessions
-                        .Include(cleaningsession => cleaningsession.FinishedTasks);
-            }
+                    .Include(session => session.SessionTasks)
+                    .ThenInclude(sessionTask => sessionTask.Task)
+                    .ToList();
 
-            return View();
+                return View();
+            }
         }
     }
 }

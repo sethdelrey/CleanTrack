@@ -34,7 +34,7 @@ namespace CleanTrack.Controllers
             }
 
             var cleaningSession = await _context.Sessions
-                .FirstOrDefaultAsync(m => m.CleaningId == id);
+                .FirstOrDefaultAsync(m => m.CleaningSessionId == id);
             if (cleaningSession == null)
             {
                 return NotFound();
@@ -54,7 +54,7 @@ namespace CleanTrack.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CleaningId,StartTime,EndTime,IsBigMop")] CleaningSession cleaningSession)
+        public async Task<IActionResult> Create([Bind("CleaningSessionId,StartTime,EndTime,IsBigMop")] CleaningSession cleaningSession)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace CleanTrack.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CleaningId,StartTime,EndTime,IsBigMop")] CleaningSession cleaningSession)
+        public async Task<IActionResult> Edit(int id, [Bind("CleaningSessionId,StartTime,EndTime,IsBigMop")] CleaningSession cleaningSession)
         {
             if (id != cleaningSession.CleaningId)
             {
@@ -125,7 +125,7 @@ namespace CleanTrack.Controllers
             }
 
             var cleaningSession = await _context.Sessions
-                .FirstOrDefaultAsync(m => m.CleaningId == id);
+                .FirstOrDefaultAsync(m => m.CleaningSessionId == id);
             if (cleaningSession == null)
             {
                 return NotFound();
@@ -147,7 +147,7 @@ namespace CleanTrack.Controllers
 
         private bool CleaningSessionExists(int id)
         {
-            return _context.Sessions.Any(e => e.CleaningId == id);
+            return _context.Sessions.Any(e => e.CleaningSessionId == id);
         }
     }
 }

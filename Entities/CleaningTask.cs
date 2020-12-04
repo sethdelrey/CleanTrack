@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using static CleanTrack.Data.AdminContext;
 
 namespace CleanTrack.Entities
 {
     public class CleaningTask
     {
 
-        [Key]
         public int TaskId { get; set; }
         public string Name { get; set; }
 
@@ -20,6 +20,9 @@ namespace CleanTrack.Entities
         public bool IsDone { get; set; }
 
         public bool IsInDoubleClean { get; set; }
+
+
+        public List<SessionTask> SessionTasks { get; set; }
     }
 }
  

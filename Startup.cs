@@ -31,7 +31,7 @@ namespace CleanTrack
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddDbContext<AdminContext>(options =>
-                options.UseSqlServer("Server = (localdb)\\mssqllocaldb; Database = CleanTrack - 1; Trusted_Connection = True; MultipleActiveResultSets = true"));
+                options.UseSqlServer("Server = (localdb)\\mssqllocaldb; Database = CleanTrack; Trusted_Connection = True; MultipleActiveResultSets = true"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
