@@ -1,5 +1,34 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model AdminModel
+
+<div class="card card-primary">
+    <div class="card-header">
+        <h1>Admin Dashboard</h1>
+    </div>
+    <div class="card-body">
+        @foreach (var Session in Model.SessionList)
+        {
+            <div>
+                <label asp-for="@Session.StartTime">Start Time</label>
+                <input asp-for="@Session.StartTime" readonly />
+            </div>
+
+            <div>
+                <label asp-for="@Session.EndTime">End Time</label>
+                <input asp-for="@Session.EndTime" readonly />
+            </div>
+
+            @*<div>
+                <label asp-for="@Session.IsBigMop"></label>
+            </div>*@
+
+            <div>Finished Tasks:</div>
+            <ul>
+                @foreach (var sessionTask in Session.SessionTasks)
+                {
+                    <li>@sessionTask.Task.Name</li>
+                }
+            </ul>
+
+        }
+    </div>
+</div>

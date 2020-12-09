@@ -1,4 +1,5 @@
 ﻿using CleanTrack.Data;
+using CleanTrack.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
@@ -16,7 +17,9 @@ namespace CleanTrack.Controllers
                     .ThenInclude(sessionTask => sessionTask.Task)
                     .ToList();
 
-                return View();
+
+
+                return View(new AdminModel() { SessionList = CleaningSessions });
             }
         }
     }

@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Linq;
+using CleanTrack.Data;
 using CleanTrack.Models;
 using Microsoft.AspNetCore.Mvc;
+using static CleanTrack.Data.AdminContext;
 
 namespace CleanTrack.Controllers
 {
@@ -37,7 +40,20 @@ namespace CleanTrack.Controllers
 
             // TODO: Put in database
 
-            return View("CleaningDone", finishedCleaningModel);
+            using (var context = new AdminContext())
+            {
+                var sess = new CleaningSession() { EndTime = data.EndTime, StartTime = data.StartTime };
+                context.Sessions.AddRange(sess);
+                foreach (var task in data.FinishedTasks)
+                {
+                    var id = context.Tasks.Select(t => t).Where(t => t.Name == task).ToList()[0];
+                    context.SessionTasks.AddRange(new SessionTask() {  Session = sess, Task = id });
+                }
+
+                context.SaveChanges();
+            }
+
+                return View("CleaningDone", finishedCleaningModel);
         }
 
         public IActionResult FinishTask(string taskName)
