@@ -1,0 +1,29 @@
+﻿@model EditSuppliesModel
+
+<div class="card card-primary">
+    <div class="card-header">
+        <h2>Edit Supplies</h2>
+    </div>
+    <div class="card-body">
+        @using (Html.BeginForm("EditList", "Supplies"))
+        {
+            foreach (var item in Model.AllSupplies)
+            {
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"
+                               name="NeededSupplies"
+                               value="@item.Value"
+                               @if (Model.NeededSupplies.Contains(item.Value)) { <text> checked </text>  } /> @item.Text
+                        </label>
+                    </div>
+                }
+
+                <div class="form">
+                    <div class="form-group">
+                        <input type="submit" value="Submit" />
+                    </div>
+                </div>
+            }
+    </div>
+</div>

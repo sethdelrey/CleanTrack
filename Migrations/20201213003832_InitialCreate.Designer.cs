@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CleanTrack.Migrations
 {
     [DbContext(typeof(AdminContext))]
-    [Migration("20201204145227_InitialCreate")]
+    [Migration("20201213003832_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

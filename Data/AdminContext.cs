@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CleanTrack.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -189,7 +190,7 @@ namespace CleanTrack.Data
                 }
             };
 
-            modelBuilder.Entity<CleaningSession>().HasData(sessions[0],sessions[1]);
+            modelBuilder.Entity<CleaningSession>().HasData(sessions);
             modelBuilder.Entity<CleaningTask>().HasData(tasks[0], tasks[1], tasks[2], tasks[3], tasks[4], tasks[5], tasks[6], tasks[7], tasks[8]);
             modelBuilder.Entity<SessionTask>().HasData(sessionTasks[0], sessionTasks[1], sessionTasks[2], sessionTasks[3], sessionTasks[4], sessionTasks[5], sessionTasks[6], sessionTasks[7], sessionTasks[8], sessionTasks[9], sessionTasks[10], sessionTasks[11]);
             base.OnModelCreating(modelBuilder);

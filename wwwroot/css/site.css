@@ -69,3 +69,35 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+.card-primary > .card-header {
+    background-color: #FFEE8A;
+    border-top-color: #FFEE8A;
+    border-right-color: #FFEE8A;
+    border-bottom-color: #FFEE8A;
+    border-left-color: #FFEE8A !important;
+}
+
+.card-primary {
+    border-top-color: #FFEE8A;
+    border-right-color: #FFEE8A;
+    border-bottom-color: #FFEE8A;
+    border-left-color: #FFEE8A !important;
+}
+
+.card-primary {
+    border-color: #FFEE8A !important;
+}
+
+    .card-primary > .card-header {
+        background-color: #FFEE8A;
+        color: black;
+    }
+
+        .card-primary > .card-header + .panel-collapse .panel-body {
+            border-top-color: #FFEE8A !important;
+        }
+
+    .card-primary > .panel-footer + .panel-collapse .panel-body {
+        border-bottom-color: #FFEE8A !important;
+    }

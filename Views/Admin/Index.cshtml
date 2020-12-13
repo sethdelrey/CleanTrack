@@ -7,28 +7,36 @@
     <div class="card-body">
         @foreach (var Session in Model.SessionList)
         {
-            <div>
-                <label asp-for="@Session.StartTime">Start Time</label>
-                <input asp-for="@Session.StartTime" readonly />
+        <div class="card card-primary">
+            <div class="card-header">
+                
             </div>
 
-            <div>
-                <label asp-for="@Session.EndTime">End Time</label>
-                <input asp-for="@Session.EndTime" readonly />
+            <div class="card-body">
+                <div>
+                    <label asp-for="@Session.StartTime">Start Time</label>
+                    <input asp-for="@Session.StartTime" readonly />
+                </div>
+
+                <div>
+                    <label asp-for="@Session.EndTime">End Time</label>
+                    <input asp-for="@Session.EndTime" readonly />
+                </div>
+
+                @*<div>
+            <label asp-for="@Session.IsBigMop"></label>
+        </div>*@
+
+                <div>Finished Tasks:</div>
+                <ul>
+                    @foreach (var sessionTask in Session.SessionTasks)
+                    {
+                        <li>@sessionTask.Task.Name</li>
+                    }
+                </ul>
             </div>
-
-            @*<div>
-                <label asp-for="@Session.IsBigMop"></label>
-            </div>*@
-
-            <div>Finished Tasks:</div>
-            <ul>
-                @foreach (var sessionTask in Session.SessionTasks)
-                {
-                    <li>@sessionTask.Task.Name</li>
-                }
-            </ul>
-
+        </div>
+        <br />  
         }
     </div>
 </div>
