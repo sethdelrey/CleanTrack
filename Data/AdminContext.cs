@@ -1,10 +1,10 @@
-﻿using CleanTrack.Entities;
+﻿using SqueakyClean.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 
-namespace CleanTrack.Data
+namespace SqueakyClean.Data
 {
     public class AdminContext : DbContext
     {
@@ -23,7 +23,7 @@ namespace CleanTrack.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=CleanTrack;Integrated Security=True");
+            optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=SqueakyClean;Integrated Security=True");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -113,7 +113,7 @@ namespace CleanTrack.Data
                     new CleaningTask()
                     {
                         CleaningTaskId = 8,
-                        Name = "Dust",
+                        Name = "Wash Dishes",
                         IsDone = true,
                         IsInDoubleClean = false
                     },

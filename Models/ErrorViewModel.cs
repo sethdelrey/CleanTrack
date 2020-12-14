@@ -1,6 +1,6 @@
 using System;
 
-namespace CleanTrack.Models
+namespace SqueakyClean.Models
 {
     public class ErrorViewModel
     {

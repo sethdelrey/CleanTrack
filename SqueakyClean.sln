@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanTrack", "CleanTrack.csproj", "{D29F4AA7-B264-479D-A731-D214162BA16A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SqueakyClean", "SqueakyClean.csproj", "{D29F4AA7-B264-479D-A731-D214162BA16A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

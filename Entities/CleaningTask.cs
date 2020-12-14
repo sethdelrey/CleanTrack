@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-using static CleanTrack.Data.AdminContext;
+using static SqueakyClean.Data.AdminContext;
 
-namespace CleanTrack.Entities
+namespace SqueakyClean.Entities
 {
     public class CleaningTask
     {

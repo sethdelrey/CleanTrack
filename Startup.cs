@@ -11,10 +11,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using CleanTrack.Entities;
-using CleanTrack.Data;
+using SqueakyClean.Entities;
+using SqueakyClean.Data;
 
-namespace CleanTrack
+namespace SqueakyClean
 {
     public class Startup
     {
@@ -31,9 +31,9 @@ namespace CleanTrack
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddDbContext<AdminContext>(options =>
-                options.UseSqlServer("Server = (localdb)\\mssqllocaldb; Database = CleanTrack; Trusted_Connection = True; MultipleActiveResultSets = true"));
+                options.UseSqlServer("Server = (localdb)\\mssqllocaldb; Database = SqueakyClean; Trusted_Connection = True; MultipleActiveResultSets = true"));
             services.AddDbContext<SuppliesContext>(options =>
-                options.UseSqlServer("Server = (localdb)\\mssqllocaldb; Database = CleanTrack; Trusted_Connection = True; MultipleActiveResultSets = true"));
+                options.UseSqlServer("Server = (localdb)\\mssqllocaldb; Database = SqueakyClean; Trusted_Connection = True; MultipleActiveResultSets = true"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

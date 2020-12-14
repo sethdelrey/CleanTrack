@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CleanTrack.Data;
-using CleanTrack.Entities;
-using CleanTrack.Models;
+using SqueakyClean.Data;
+using SqueakyClean.Entities;
+using SqueakyClean.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace CleanTrack.Controllers
+namespace SqueakyClean.Controllers
 {
     public class SuppliesController : Controller
     {

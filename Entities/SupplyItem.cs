@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CleanTrack.Entities
+namespace SqueakyClean.Entities
 {
     public class SupplyItem
     {

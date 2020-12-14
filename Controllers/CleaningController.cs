@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Linq;
-using CleanTrack.Data;
-using CleanTrack.Models;
+using SqueakyClean.Data;
+using SqueakyClean.Models;
 using Microsoft.AspNetCore.Mvc;
-using static CleanTrack.Data.AdminContext;
+using static SqueakyClean.Data.AdminContext;
 
-namespace CleanTrack.Controllers
+namespace SqueakyClean.Controllers
 {
     public class CleaningController : Controller
     {

@@ -1,10 +1,10 @@
-﻿using CleanTrack.Entities;
+﻿using SqueakyClean.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CleanTrack.Models
+namespace SqueakyClean.Models
 {
     public class SuppliesModel
     {

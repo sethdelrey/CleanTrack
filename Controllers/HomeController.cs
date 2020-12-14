@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using CleanTrack.Models;
+using SqueakyClean.Models;
 
-namespace CleanTrack.Controllers
+namespace SqueakyClean.Controllers
 {
     public class HomeController : Controller
     {

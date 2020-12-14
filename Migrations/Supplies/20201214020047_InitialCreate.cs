@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace CleanTrack.Migrations.Supplies
+namespace SqueakyClean.Migrations.Supplies
 {
     public partial class InitialCreate : Migration
     {

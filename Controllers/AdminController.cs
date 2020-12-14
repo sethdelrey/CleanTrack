@@ -1,10 +1,10 @@
-﻿using CleanTrack.Data;
-using CleanTrack.Models;
+﻿using SqueakyClean.Data;
+using SqueakyClean.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
-namespace CleanTrack.Controllers
+namespace SqueakyClean.Controllers
 {
     public class AdminController : Controller
     {
